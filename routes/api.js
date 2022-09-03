@@ -947,10 +947,10 @@ router.get('/randomgambar/couplepp', async (req, res, next) => {
 })
 
 
-router.get('/randomgambar/dadu', async (req, res, next) => {
+router.get('/randomgambar/indo', async (req, res, next) => {
 
-	let dadu = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/indonesia.json')
-	let random = dadu[Math.floor(Math.random() * dadu.length)]
+	let indo = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/indonesia.json')
+	let random = indo[Math.floor(Math.random() * dadu.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
 	res.send(result)
