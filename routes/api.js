@@ -949,7 +949,7 @@ router.get('/randomgambar/couplepp', async (req, res, next) => {
 
 router.get('/randomgambar/indo', async (req, res, next) => {
 
-	let indo = await fetchJson('https://raw.githubusercontent.com/VarrelKun/nobitaMD/main/jepang.json')
+	let indo = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/indonesia.json')
 	let random = indo[Math.floor(Math.random() * indo.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
@@ -959,7 +959,7 @@ router.get('/randomgambar/indo', async (req, res, next) => {
 
 router.get('/randomgambar/jepang', async (req, res, next) => {
 
-	let jpn = await fetchJson('https://raw.githubusercontent.com/jepribarus/JB-Api/main/nsfw/ass.json')
+	let jpn = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/jepang.json')
 	let random = jpn[Math.floor(Math.random() * jpn.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
