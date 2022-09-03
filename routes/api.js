@@ -957,7 +957,7 @@ router.get('/randomgambar/indo', async (req, res, next) => {
 })
 
 
-router.get('/randomgambar/jepang', async (req, res, next) => {
+router.get('/randomgambar/jpn', async (req, res, next) => {
 
 	let jpn = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/jpn.json')
 	let random = jpn[Math.floor(Math.random() * jpn.length)]
