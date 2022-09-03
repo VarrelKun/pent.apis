@@ -949,27 +949,27 @@ router.get('/randomgambar/couplepp', async (req, res, next) => {
 
 router.get('/randomgambar/indo', async (req, res, next) => {
 
-	let indo = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/indonesia.json')
+	let indo = await fetchJson('gg')
 	let random = indo[Math.floor(Math.random() * indo.length)]
 	var result = await getBuffer(random.result)
-	res.set({'Content-Type': 'image/jpg'})
+	res.set({'Content-Type': 'photo/jpg'})
 	res.send(result)
 })
 
 
 router.get('/randomgambar/jpn', async (req, res, next) => {
 
-	let jpn = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/jpn.json')
+	let jpn = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/indonesia.json')
 	let random = jpn[Math.floor(Math.random() * jpn.length)]
 	var result = await getBuffer(random.result)
-	res.set({'Content-Type': 'image/jpg'})
+	res.set({'Content-Type': 'img/jpg'})
 	res.send(result)
 })
 
 
 router.get('/randomgambar/china', async (req, res, next) => {
 
-	let china = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/404.json')
+	let china = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/indonesia.json')
 	let random = china[Math.floor(Math.random() * china.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
