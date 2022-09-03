@@ -972,7 +972,7 @@ router.get('/randomgambar/china', async (req, res, next) => {
 	let china = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/cecan/Proyek%20Baru%20[23E27C1].png')
 	let random = china[Math.floor(Math.random() * china.length)]
 	var result = await getBuffer(random.result)
-	res.set({'Content-Type': 'image/jpg'})
+	res.set({'Content-Type': 'image/png'})
 	res.send(result)
 })
 
@@ -982,7 +982,7 @@ router.get('/randomgambar/korea', async (req, res, next) => {
 	let korea = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/cecan/Proyek%20Baru%20[23E27C1].png')
 	let random = korea[Math.floor(Math.random() * korea.length)]
 	var result = await getBuffer(random.result)
-	res.set({'Content-Type': 'image/jpg'})
+	res.set({'Content-Type': 'image/png'})
 	res.send(result)
 })
 
