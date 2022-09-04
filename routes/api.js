@@ -969,7 +969,7 @@ router.get('/randomgambar/jpn', async (req, res, next) => {
 
 router.get('/randomgambar/china', async (req, res, next) => {
 
-	let china = await fetchJson('https://raw.githubusercontent.com/KazukoGans/database/main/cecan/china.json')
+	let china = await fetchJson('https://raw.githubusercontent.com/VarrelKun/database/main/cecan/china.json')
 	let random = china[Math.floor(Math.random() * china.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
