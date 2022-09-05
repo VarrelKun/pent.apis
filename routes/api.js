@@ -990,12 +990,23 @@ router.get('/randomgambar/korea', async (req, res, next) => {
 
 router.get('/nsfw/ass', async (req, res, next) => {
 
-	let korea = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/ass.json')
-	let random = korea[Math.floor(Math.random() * korea.length)]
+	let ass = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/ass.json')
+	let random = ass[Math.floor(Math.random() * ass.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
 	res.send(result)
 })
+
+
+router.get('/nsfw/hentaigif', async (req, res, next) => {
+
+	let hgif = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/ass.json')
+	let random = hgif[Math.floor(Math.random() * hgif.length)]
+	var result = await getBuffer(random.result)
+	res.set({'Content-Type': 'webp/gif'})
+	res.send(result)
+})
+
 
 // Game
 
