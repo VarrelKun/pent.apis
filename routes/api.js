@@ -986,6 +986,17 @@ router.get('/randomgambar/korea', async (req, res, next) => {
 	res.send(result)
 })
 
+// NSFW
+
+router.get('/nsfw/ass', async (req, res, next) => {
+
+	let korea = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/ass.json')
+	let random = korea[Math.floor(Math.random() * korea.length)]
+	var result = await getBuffer(random.result)
+	res.set({'Content-Type': 'image/jpg'})
+	res.send(result)
+})
+
 // Game
 
 router.get('/game/tembakgambar', async (req, res, next) => {
