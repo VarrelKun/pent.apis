@@ -1000,10 +1000,10 @@ router.get('/nsfw/ass', async (req, res, next) => {
 
 router.get('/nsfw/hentaigif', async (req, res, next) => {
 
-	let hgif = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/ass.json')
+	let hgif = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/gif.json')
 	let random = hgif[Math.floor(Math.random() * hgif.length)]
 	var result = await getBuffer(random.result)
-	res.set({'Content-Type': 'webp/gif'})
+	res.set({'Content-Type': 'video/gif'})
 	res.send(result)
 })
 
