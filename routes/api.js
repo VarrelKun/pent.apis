@@ -998,12 +998,12 @@ router.get('/nsfw/ass', async (req, res, next) => {
 })
 
 
-router.get('/nsfw/hentaigif', async (req, res, next) => {
+router.get('/nsfw/cum', async (req, res, next) => {
 
-	let hgif = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/gif.json')
+	let hgif = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/cum.json')
 	let random = hgif[Math.floor(Math.random() * hgif.length)]
 	var result = await getBuffer(random.result)
-	res.set({'Content-Type': 'image/gif'})
+	res.set({'Content-Type': 'image/jpg'})
 	res.send(result)
 })
 
