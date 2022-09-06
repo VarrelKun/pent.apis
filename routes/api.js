@@ -1016,16 +1016,14 @@ router.get('/nsfw/femdom', async (req, res, next) => {
 	res.send(result)
 })
 
+
 router.get('/nsfw/bdsm', async (req, res, next) => {
 
-
-
-  let bdsm = JSON.parse(fs.readFileSync(__path +'/data/bdsm.json'));
-  let randass = bdsm[Math.floor(Math.random() * bdsm.length)];
-  data = await fetch(randass).then(v => v.buffer())
-  await fs.writeFileSync(__path +'/tmp/bdsm.jpg', data)
-  res.sendFile(__path +'/tmp/bdsm.jpg')
-}
+	let bdsm = await fetchJson('https://raw.githubusercontent.com/VarrelKun/pent.apis/main/data/bdsm.json')
+	let random = bdsm[Math.floor(Math.random() * bdsm.length)]
+	var result = await getBuffer(random.result)
+	res.set({'Content-Type': 'image/jpg'})
+	res.send(result)
 })
 
 
