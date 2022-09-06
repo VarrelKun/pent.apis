@@ -1007,9 +1007,9 @@ router.get('/nsfw/cum', async (req, res, next) => {
 	res.send(result)
 })
 
-router.get('/nsfw/futanari', async (req, res, next) => {
+router.get('/nsfw/femdom', async (req, res, next) => {
 
-	let china = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/cino.json')
+	let china = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/femdom.json')
 	let random = china[Math.floor(Math.random() * china.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
