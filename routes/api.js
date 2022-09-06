@@ -1009,8 +1009,8 @@ router.get('/nsfw/cum', async (req, res, next) => {
 
 router.get('/nsfw/femdom', async (req, res, next) => {
 
-	let china = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/femdom.json')
-	let random = china[Math.floor(Math.random() * china.length)]
+	let femdom = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/femdom.json')
+	let random = femdom[Math.floor(Math.random() * femdom.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
 	res.send(result)
@@ -1019,7 +1019,7 @@ router.get('/nsfw/femdom', async (req, res, next) => {
 
 router.get('/nsfw/bdsm', async (req, res, next) => {
 
-	let bdsm = await fetchJson('https://raw.githubusercontent.com/VarrelKun/pent.apis/main/data/bdsm.json')
+	let bdsm = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/bdsm.json')
 	let random = bdsm[Math.floor(Math.random() * bdsm.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
