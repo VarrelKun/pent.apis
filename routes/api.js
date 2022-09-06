@@ -1016,6 +1016,11 @@ router.get('/nsfw/femdom', async (req, res, next) => {
 	res.send(result)
 })
 
+router.get('/nsfw/bdsm', async (req, res, next) => { 
+
+       const bdsm = JSON.parse(fs.readFileSync(__path +'/data/bdsm.json')); 
+       const randbdsm = bdsm[Math.floor(Math.random() * bdsm.length)]; data = await fetch(randbdsm).then(v => v.buffer()) await fs.writeFileSync(__path +'/tmp/bdsm.jpeg', data) res.sendFile(__path +'/tmp/bdsm.jpeg')} else {res.json(loghandler.invalidKey)}})
+
 // Game
 
 router.get('/game/tembakgambar', async (req, res, next) => {
