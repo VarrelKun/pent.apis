@@ -1000,8 +1000,8 @@ router.get('/nsfw/ass', async (req, res, next) => {
 
 router.get('/nsfw/cum', async (req, res, next) => {
 
-	let hgif = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/cum.json')
-	let random = hgif[Math.floor(Math.random() * hgif.length)]
+	let cum = await fetchJson('https://raw.githubusercontent.com/VarrelKun/data/main/nsfw/cum.json')
+	let random = cum[Math.floor(Math.random() * cum.length)]
 	var result = await getBuffer(random.result)
 	res.set({'Content-Type': 'image/jpg'})
 	res.send(result)
